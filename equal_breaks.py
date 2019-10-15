@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import mapclassify.classifiers as mc
 
-class Equal_Area_Greedy(mc.Map_Classifier):
+class Equal_Area_Greedy(mc.MapClassifier):
     # y must be a list with elements of type {'area': a, 'value': v}
     def __init__(self, y, area=None, k=mc.K):
         if area is None:
@@ -11,7 +11,7 @@ class Equal_Area_Greedy(mc.Map_Classifier):
 
         self.k = k
         self.area = area
-        mc.Map_Classifier.__init__(self, y)
+        super().__init__(y)
         self.name = 'Equal Area Greedy'
 
     def _set_bins(self):
@@ -40,7 +40,7 @@ class Equal_Area_Greedy(mc.Map_Classifier):
 setattr(mc, Equal_Area_Greedy.__name__, Equal_Area_Greedy)
 mc.CLASSIFIERS = mc.CLASSIFIERS + (Equal_Area_Greedy.__name__,)
 
-class Equal_Area_Greedy2(mc.Map_Classifier):
+class Equal_Area_Greedy2(mc.MapClassifier):
     # y must be a list with elements of type {'area': a, 'value': v}
     def __init__(self, y, area=None, k=mc.K):
         if area is None:
@@ -48,7 +48,7 @@ class Equal_Area_Greedy2(mc.Map_Classifier):
 
         self.k = k
         self.area = area
-        mc.Map_Classifier.__init__(self, y)
+        super().__init__(y)
         self.name = 'Equal Area Greedy 2'
 
     def _set_bins(self):
@@ -75,7 +75,7 @@ setattr(mc, Equal_Area_Greedy2.__name__, Equal_Area_Greedy2)
 mc.CLASSIFIERS = mc.CLASSIFIERS + (Equal_Area_Greedy2.__name__,)
 
 
-class Equal_Area_DP(mc.Map_Classifier):
+class Equal_Area_DP(mc.MapClassifier):
     # y must be a list with elements of type {'area': a, 'value': v}
     def __init__(self, y, area=None, k=mc.K):
         if area is None:
@@ -83,7 +83,7 @@ class Equal_Area_DP(mc.Map_Classifier):
 
         self.k = k
         self.area = area
-        mc.Map_Classifier.__init__(self, y)
+        super().__init__(y)
         self.name = 'Equal Area Dynamic Programming'
 
     def _resolve_break_links(self, breaks, links):
