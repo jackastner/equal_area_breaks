@@ -22,9 +22,22 @@ pip install . geopandas matplotlib descartes
 You should then be able to execute the demo python scripts.
 
 ```
-python demos/world_population.py
+cd demos
+python world_population.py
+```
+
+The second example uses a data file that does not come packaged with geopandas.
+The data for this example is [Maryland census data][4] from 2010.  To run this
+example, you will need to first unzip the archive in the data directory.
+
+```
+cd demos/data
+unzip Maryland_Census_Data__Census_Tracts.zip
+cd ..
+python maryland_population.py
 ```
 
 [1]: https://pysal.org/mapclassify/
 [2]: https://pysal.org/pysal/
 [3]: https://www.cs.umd.edu/sites/default/files/scholarly_papers/Abboud.pdf
+[4]: https://data.imap.maryland.gov/datasets/maryland-census-data-census-tracts

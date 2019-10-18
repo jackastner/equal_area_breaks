@@ -1,1 +1,7 @@
 __pycache__
+*.cpg
+*.prj
+*.shx
+*.dbf
+*.shp
+*.xml
