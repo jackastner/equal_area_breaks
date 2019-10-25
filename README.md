@@ -23,7 +23,7 @@ You should then be able to execute the demo python scripts.
 
 ```
 cd demos
-python world_population.py
+python world_gdp.py
 ```
 
 The second example uses a data file that does not come packaged with geopandas.
