@@ -14,11 +14,11 @@ world['area'] = world.geometry.area
 data_col='gdp_per_cap'
 cmap = cmap_yl_or_rd()
 
-fig, axes = plt.subplots(nrows = 4, ncols = 2)
+fig, axes = plt.subplots(nrows = 2, ncols = 2)
 
-plot_classes(world, mapclassify.Quantiles(world[data_col]), axes[0,0], axes[0,1], cmap)
-plot_classes(world, mapclassify.EqualInterval(world[data_col]), axes[1,0], axes[1,1], cmap)
-plot_classes(world, mapclassify.NaturalBreaks(world[data_col]), axes[2,0], axes[2,1], cmap)
-plot_classes(world, equal_area_breaks.Equal_Area_DP(world[data_col], area=world['area']), axes[3,0], axes[3,1], cmap)
+plot_classes(world, mapclassify.Quantiles(world[data_col]), fig, axes[0,0], cmap)
+plot_classes(world, mapclassify.EqualInterval(world[data_col]), fig, axes[1,0], cmap)
+plot_classes(world, mapclassify.NaturalBreaks(world[data_col]), fig, axes[0,1], cmap)
+plot_classes(world, equal_area_breaks.Equal_Area_DP(world[data_col], area=world['area']), fig, axes[1,1], cmap)
 
 plt.show()
